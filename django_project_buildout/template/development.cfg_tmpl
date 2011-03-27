@@ -1,0 +1,11 @@
+[buildout]
+extends = base.cfg
+
+[{{ package_name }}]
+settings = settings.development
+eggs +=
+     django-debug-toolbar
+     Werkzeug
+     django-extensions
+     django-crawler
+     django-template-repl

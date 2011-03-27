@@ -1,0 +1,12 @@
+[buildout]
+parts = 
+      {{ package_name }}
+unzip = true
+
+[{{ package_name }}]
+recipe = djangorecipe
+version = {{ django_version }}
+settings = settings.base
+project = {{ package_name }}
+eggs =
+    South

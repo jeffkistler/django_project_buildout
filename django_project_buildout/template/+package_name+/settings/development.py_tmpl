@@ -1,0 +1,24 @@
+from {{ package_name }}.settings.base import *
+
+# Turn on debug mode
+DEBUG = True
+TEMPLATE_DEBUG = DEBUG
+
+# Add a selection of development helper apps
+INSTALLED_APPS += (
+    'debug_toolbar',
+    'django_extensions',
+    'crawler',
+    'template_repl',
+)
+
+# Add the debug-toolbar middleware to enable the toolbar
+MIDDLEWARE_CLASSES += (
+    'debug_toolbar.middleware.DebugToolbarMiddleware',
+)
+
+# Enable static media serving and other development URL patterns
+ROOT_URLCONF = '{{ package_name }}.urls.development'
+
+# Print emails to the console
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'

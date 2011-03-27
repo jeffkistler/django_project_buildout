@@ -1,0 +1,4 @@
+{{project_name}}
+{{for i in project_name}}={{endfor}}
+
+{{ description }}
